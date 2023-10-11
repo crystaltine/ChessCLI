@@ -32,7 +32,7 @@ document.getElementById('idsend').addEventListener('click', function() {
     const roomid = document.getElementById('roomid').value;
 
     // contact /checkroom endpoint to see if room exists
-    fetch(`http://localhost:3000/checkroom?id=${roomid}`)
+    fetch(`http://localhost:8080/checkroom?id=${roomid}`)
     .then(res => res.text())
     .then(data => {
 		console.log(`data checkroom endpoint: ${data}`)

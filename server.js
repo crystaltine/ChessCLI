@@ -5,7 +5,7 @@ const io = require('socket.io')(3001, {
 });
 const app = express();
 app.use(cors());
-const port = 3000;
+const port = process.env.port || 8080;
 
 const currIDs = new Set();
 
