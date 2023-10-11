@@ -16,14 +16,35 @@
     <body>
         <section class="main-section">
             <div class="main-container">
-                <h1>Send msg</h1>
+                <h1>Test ChessCLI</h1>
+
+                <button id="createroom">Request create room</button>
+                <p id="connectedroom">Not connected to a room.</p>
+
                 Room ID: <input id="roomid"></input>
+                <button id="idsend">Join room</button>
+                <p id="roomjoinerror"></p>
+
                 <br />
                 <br />
-				Move: <input id="input"></input>
-				<button id="submit">Send</button>
+
+				Move: <input id="moveinput"></input>
+				<button id="movesend">Send move</button>
+
+                <br />
+                <br />
+
+                Test action: <select id="actionselect">
+                    <option value="resign">Resign</option>
+                    <option value="offerdraw">Offer Draw</option>
+                    <option value="acceptdraw">Accept Draw</option>
+                    <option value="declinedraw">Decline Draw</option>
+                </select>
+                <button id="actionsend">Send action</button>
+
 				<hr />
-				<ul id="messages"></ul>
+                <h2>Receive feed:</h2>
+				<ul id="feed"></ul>
             </div>
         </section>
     </body>
