@@ -1,11 +1,16 @@
 const express = require('express');
+const http = require('http');
+
 const cors = require('cors');
-const io = require('socket.io')(3001, {
-    cors: { origin: '*' }
-});
 const app = express();
 app.use(cors());
-const port = process.env.port || 8080;
+
+const server = http.createServer(app);
+const io = require('socket.io')(server, {
+    cors: { origin: '*', }
+});
+
+const port = process.env.PORT || 8080;
 
 const currIDs = new Set();
 
@@ -119,6 +124,6 @@ io.on('disconnect', (socket) => {
     console.log(`\x1b[31mClosed\x1b[0m ${socket.id}`);
 });
 
-app.listen(port, () => {
-    console.log(`Server listening at port ${port}`);
+server.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
 });

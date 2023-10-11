@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"no idea what to do with this\" && exit 0"
+    "test": "echo \"no idea what to do with this\" && exit 0",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",

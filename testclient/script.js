@@ -1,4 +1,5 @@
-const socket = io('ws://localhost:3001');
+const socket = io('wss://chesscli.azurewebsites.net/');
+console.log(`ws connection: ${socket}`)
 let id;
 
 socket.on('roomcreated', (roomID) => {
@@ -32,7 +33,7 @@ document.getElementById('idsend').addEventListener('click', function() {
     const roomid = document.getElementById('roomid').value;
 
     // contact /checkroom endpoint to see if room exists
-    fetch(`http://localhost:8080/checkroom?id=${roomid}`)
+    fetch(`https://chesscli.azurewebsites.net/checkroom?id=${roomid}`)
     .then(res => res.text())
     .then(data => {
 		console.log(`data checkroom endpoint: ${data}`)
