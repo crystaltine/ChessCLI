@@ -1,5 +1,4 @@
 const socket = io('wss://chesscli.azurewebsites.net/');
-console.log(`ws connection: ${socket}`)
 let id;
 
 socket.on('roomcreated', (roomID) => {

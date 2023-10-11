@@ -125,5 +125,5 @@ io.on('disconnect', (socket) => {
 });
 
 server.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+    console.log(`HI! Server listening on port ${port}`);
 });
